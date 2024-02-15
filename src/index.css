@@ -1,13 +1,324 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Rubik+Mono+One&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  /* overflow-x: hidden; */
+}
+.App{
+  background-color: #000;
+}
+a {
+  text-decoration: none;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#Home_container {
+  display: flex;
+}
+
+.sidebar_container {
+  z-index: 1000;
+  /* position: relative; */
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 16vw;
+  margin-bottom: 0.5rem;
+  /* height: 600vh; */
+  height: 100vh;
+  background-color: #000;
+  /* background-color: #34353a; */
+  color: #ffc86b;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width 0.3s ease;
+}
+
+.sidebar_container.collapsed {
+  width: 70px;
+}
+
+.menu_icon {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.sidebar_content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar_content a {
+  color: white;
+}
+.sidebar_item {
+  padding: 1rem 10px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  text-wrap: wrap;
+}
+.sidebar_item i {
+  font-size: 2rem;
+  color: #ffc86b;
+}
+.sidebar_item span {
+  margin-left: 10px;
+}
+.sidebar_item .name {
+  font-family: "Rubik Mono One", monospace;
+  font-weight: 400;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.sidebar_item .personalInfo {
+  text-align: center;
+}
+.sidebar_item .personalInfo img {
+  transition: all 0.5s ease;
+  display: block;
+  margin: 0 auto;
+}
+
+/*mainPage css*/
+#mainPage_container {
+  display: flex;
+  justify-content: center;
+}
+.mainPage {
+  /* background-color: #000; */
+  background-color: #34353a;
+  width: 100%;
+  padding: 1rem 7rem;
+}
+.info_Box1 {
+  font-family: "Kaushan Script", cursive;
+  align-self: center;
+
+  display: flex;
+
+  gap: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+.profileTitle {
+  display: flex;
+  align-items: baseline;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.profileTitle p {
+  margin-top: 10rem;
+}
+.profileTitle .profileName {
+  font-family: "Caveat", cursive;
+  color: #ffc86b;
+  font-size: 3.2rem;
+  text-shadow: 1px 1px 3px black;
+}
+
+.profileImg {
+  right: 1rem;
+  top: 2rem;
+}
+.profileImg img {
+  width: 20rem;
+  filter: grayscale(0.5);
+  filter: drop-shadow(4px 3px 5px  #ffc86b);
+}
+.info_Box1 .role {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  top: 15rem;
+  left: 5rem;
+}
+.icons{
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.marquee-contact-info {
+  /* width: 100%; */
+  /* background-color: #000; */
+  background-color: #34353a;
+  color: #ffc86b;
+  animation: marquee 15s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  padding-top: 0.5rem;
+  /* border: 1px solid red; */
+  position: absolute;
+}
+.marquee-contact-info p {
+  background-color: transparent;
+}
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+#about_container {
+  margin-top: 9rem;
+}
+#about_container h2 {
+  color: #ffc86b;
+}
+#about_container .info-content {
+  text-indent: 8rem;
+  color: #fff;
+  line-height: 2rem;
+}
+#about_container .mid_container .container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+#about_container .mid_container .container .exp,
+#about_container .mid_container .container .edu{
+  margin: 1rem;
+  width: 45%;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ffc86b;
+  background: linear-gradient(to right, #363535, #141414);
+}
+#about_container .mid_container .container .box{
+  color: white;
+}
+
+#about_container .social_linkscards{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+#about_container .social_linkscards .card{
+  /* border: 1px solid goldenrod; */
+  width: 12rem;
+  margin: 1.5rem;
+  /* background: linear-gradient(to right, #727070, #141414); */
+  background: #0000002c;
+  border-radius: 10px;
+  padding: 5px;
+  text-align: center;
+}
+#about_container .social_linkscards .card:hover{
+  box-shadow: 0px 0px 5px #ffc86b;
+}
+#about_container .social_linkscards .card .card-body h4{
+  color: #ffc86b;
+}
+#about_container .social_linkscards .card .card-img-top{
+  width: 5rem;
+}
+#about_container .social_linkscards .card .card-img-top:hover{
+  filter: drop-shadow(0px 0px 3px black);
+}
+
+
+@media only screen and (max-width: 1200px) {
+  .sidebar_container {
+    width: 16vw;
+  }
+
+  #mainPage_container {
+    width: calc(100% - 200px);
+    margin-left: 200px;
+  }
+
+  .sidebar_content {
+    flex-direction: column;
+  }
+
+  .sidebar_item {
+    width: 100%;
+    font-size: small;
+    padding: 1rem 10px;
+  }
+
+  .sidebar_item .personalInfo .name {
+    font-size: 0.9rem;
+  }
+  .sidebar_item .personalInfo img.small-width {
+    width: 3rem !important;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .info_Box1 {
+    display: block;
+  }
+  .sidebar_container {
+    width: 70px;
+  }
+
+  .sidebar_container.collapsed {
+    width: 70px;
+  }
+
+  #mainPage_container {
+    width: calc(100% - 70px);
+    margin-left: 70px;
+  }
+
+  .sidebar_content {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .sidebar_item {
+    width: 50%;
+    padding: 1rem 0.5rem;
+  }
+  .sidebar_item span {
+    display: none;
+  }
+  .sidebar_item .name {
+    font-size: 1rem;
+  }
+
+  .sidebar_item i {
+    font-size: 1rem;
+  }
+  .profileImg img {
+    width: 10rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .sidebar_container {
+    width: 50px;
+  }
+
+  #mainPage_container {
+    width: calc(100% - 50px);
+    margin-left: 50px;
+  }
+
+  .sidebar_item {
+    padding: 1rem 5px;
+  }
+
+  .sidebar_item .name {
+    font-size: 0.8rem;
+  }
+
+  .sidebar_item i {
+    font-size: 1rem;
+  }
 }
